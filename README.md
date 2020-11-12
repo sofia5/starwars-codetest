@@ -4,7 +4,7 @@
 
 # Save The Galaxy
 
-Hello fellow jedi warrior! ⚔️ Master Yoda has assigned with a mission that is critical in order to save the Empire,
+Hello fellow jedi warrior! ⚔️ Master Yoda has mission for you that is critical in order to save the Empire,
 and the very reality as we know it! In order to do so, it is critical that we get intel on the 20 fattest characters in
 the galaxy. In simpler words, _we need a list of the fattest characters in the star wars universe_. Their fatness
 level will be determined according to their _Body Mass Index_, or bmi for short. We believe in you! May the force ever
@@ -88,7 +88,7 @@ expectations though:
   code, and to reason about technical decisions. So it might be a good idea to read through you code again before the
   discussion.
 
-During the ciscussion we are not going to put much effort into grilling you about the history of JavaScript, "why eval
+During the discussion we are not going to put much effort into grilling you about the history of JavaScript, "why eval
 is bad?" or "what differs double from tripple-equals?", instead we are going to focus more on code organization, good
 development patterns, how to cope with regression, and how to maintain good code quality.
 
