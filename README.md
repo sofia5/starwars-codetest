@@ -10,6 +10,8 @@ the galaxy. In simpler words, _we need a list of the fattest characters in the s
 level will be determined according to their _Body Mass Index_, or bmi for short. We believe in you! May the force ever
 be with you!
 
+The SWAPI should have the info you need. [swapi.dev](https://swapi.dev/)
+
 # Body Mass Index
 
 The formular for BMI goes as follows:
@@ -61,7 +63,8 @@ convenience.
 
 # Definition of Done
 
-The task is complete when a proper list of the top 20 fattest characters are shown in the frontend to the user.
+The task is complete when a proper list of the top 20 fattest characters are shown in the frontend to the user. The
+date should be provided from [swapi.dev](https://swapi.dev/).
 
 # Submitting the Test
 
