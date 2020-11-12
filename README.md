@@ -4,11 +4,12 @@
 
 # Save The Galaxy
 
-Hello fellow jedi warrior! ⚔️ Master Yoda has mission for you that is critical in order to save the Empire,
-and the very reality as we know it! In order to do so, it is critical that we get intel on the 20 fattest characters in
-the galaxy. In simpler words, _we need a list of the fattest characters in the star wars universe_. Their fatness
-level will be determined according to their _Body Mass Index_, or bmi for short. We believe in you! May the force ever
-be with you!
+Hello my fellow jedi warrior! ⚔ Master Yoda has assigned you with a mission that
+is critical in order to save the Galaxy and our very reality as we know it! In
+order to do so it is critical that we get intel on the 20 fattest characters in
+the galaxy. In simpler words, _we need a list of the fattest characters in the
+star wars universe_. Their fatness level will be determined according to their
+_Body Mass Index_ or **BMI** for short. We believe in you, may the force be with you!
 
 The SWAPI should have the info you need. [swapi.dev](https://swapi.dev/)
 
