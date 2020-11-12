@@ -106,8 +106,8 @@ export default class CharacterList extends Component<
       return (
         <div className={styles.infoWrapper}>
           <span className={styles.infoText}>
-            Could not contact backend. Are you server running, or perhaps the
-            code is broken?
+            Could not contact backend. Is your service up and running, or
+            perhaps the code is broken?
           </span>
           <Cancel />
           <span className={styles.descriptionText}>
