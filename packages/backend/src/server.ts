@@ -16,7 +16,7 @@ function main() {
 
   // This is where the magic happens ✨
   console.log(`The server is running at port ${port}`);
-  // app.listen(port);
+  app.listen(port);
 }
 
 // Lets start the main method
