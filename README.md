@@ -9,7 +9,7 @@ is critical in order to save the Galaxy and our very reality as we know it! In
 order to do so it is critical that we get intel on the 20 fattest characters in
 the galaxy. In simpler words, _we need a list of the fattest characters in the
 star wars universe_. Their fatness level will be determined according to their
-_Body Mass Index_ or **BMI** for short. We believe in you, may the force be with you!
+_Body Mass Index_ or **BMI** for short. We believe in you, may the source be with you!
 
 The SWAPI should have the info you need. [swapi.dev](https://swapi.dev/)
 
