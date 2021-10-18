@@ -2,6 +2,7 @@ import React, { Component, ReactNode } from 'react';
 import UnderConstruction from './under_construction.svg';
 import Cancel from './undraw_cancel.svg';
 import styles from './CharacterList.module.scss';
+import Table from 'react-bootstrap/Table';
 
 interface Character {
   id: string;
@@ -9,9 +10,13 @@ interface Character {
   bmi: number;
 }
 
+interface CharacterFull extends Character {
+  [propName: string]: any;
+}
+
 interface CharacterListState {
   isLoading: boolean;
-  data?: Array<Character>;
+  data?: Array<CharacterFull>;
   error?: { statusCode?: number; message: string };
 }
 
@@ -56,7 +61,7 @@ export default class CharacterList extends Component<
     return (
       <div className={styles.wrapper}>
         <div className={styles.titleWrapper}>
-          <span>Top 20 fattest characters</span>
+          <span>Top fattest characters Star Wars characters</span>
         </div>
         <div>{this.renderList()}</div>
       </div>
@@ -130,9 +135,62 @@ export default class CharacterList extends Component<
   };
 
   renderListData = (): ReactNode => {
-    // TODO: Implement the list here
+    const { data } = this.state;
+    const characterList: Character[] = [];
+
+    if (data) {
+      data.forEach((person) => {
+        let bmi = 0;
+        if (person.mass !== 'unknown' && person.height !== 'unknown') {
+          bmi =
+            (parseInt(person.mass) / Math.pow(parseInt(person.height), 2)) *
+            10000;
+        } else {
+          bmi = 0;
+        }
+        const character: Character = {
+          id: person.id,
+          name: person.name,
+          bmi: bmi,
+        };
+        characterList.push(character);
+      });
+    }
+    characterList.sort((a, b) => {
+      return b.bmi - a.bmi;
+    });
+
     return (
-      <span className={styles.infoText}>TODO: No list implemented yet</span>
+      <div className={styles.infoText + ' ' + styles.scrollbar}>
+        <Table
+          striped
+          bordered
+          hover
+          variant="dark"
+          className={styles.characterTable}
+        >
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>BMI</th>
+            </tr>
+          </thead>
+          <tbody>
+            {characterList.map((character, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{character.name}</td>
+                {character.bmi === 0 ? (
+                  <td>-</td>
+                ) : (
+                  <td>{character.bmi.toFixed(2)}</td>
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
     );
   };
 }

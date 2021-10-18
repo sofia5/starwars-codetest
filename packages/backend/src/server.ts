@@ -1,23 +1,48 @@
 import Koa from 'koa';
 import Router from '@koa/router';
 import Cors from '@koa/cors';
-import topFatCharacters from './top-fat-characters';
+// import json from 'koa-json';
+//import logger from 'koa-logger';
+import topFatCharacters from './top-fat-characters/top-fat-characters';
+import { config } from './config';
 
-function main() {
-  // Server setup
-  const port = 3000;
-  const app = new Koa();
-  const router = new Router();
+const app = new Koa();
+const router = new Router();
 
-  router.get('/top-fat-characters', topFatCharacters);
+app.use(
+  Cors({
+    origin: '*',
+  })
+);
+// app.use(json());
+router.get('/top-fat-characters', topFatCharacters);
+app.use(router.routes()).use(router.allowedMethods());
+//app.use(logger())
+//app.use(async ctx => (ctx.body = { msg: 'test'}))
 
-  app.use(Cors());
-  app.use(router.routes()).use(router.allowedMethods());
+// This is where the magic happens ✨
+console.log(`The server is running at port ${config.port}`);
+const server = (module.exports = app.listen(config.port));
+export default server;
 
-  // This is where the magic happens ✨
-  console.log(`The server is running at port ${port}`);
-  app.listen(port);
-}
+// async function responseTime(ctx, next) {
+//   const start = new Date();
+//   await next();
+//   const ms = new Date() - start;
+//   ctx.set('X-Response-Time', ms + 'ms');
+// }
 
-// Lets start the main method
-main();
+// async function logger(ctx, next) {
+//   const start = new Date();
+//   await next();
+//   const ms = new Date() - start;
+//   if ('test' != process.env.NODE_ENV) {
+//     console.log('%s %s - %s', ctx.method, ctx.url, ms);
+//   }
+// }
+
+// const all = compose([
+//   responseTime,
+//   logger,
+//   respond
+// ]);
