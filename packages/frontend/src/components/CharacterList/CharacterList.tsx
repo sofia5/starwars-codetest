@@ -3,6 +3,7 @@ import UnderConstruction from './under_construction.svg';
 import Cancel from './undraw_cancel.svg';
 import styles from './CharacterList.module.scss';
 import Table from 'react-bootstrap/Table';
+import { v4 as uuidv4 } from 'uuid';
 
 interface Character {
   id: string;
@@ -149,7 +150,7 @@ export default class CharacterList extends Component<
           bmi = 0;
         }
         const character: Character = {
-          id: person.id,
+          id: uuidv4(),
           name: person.name,
           bmi: bmi,
         };

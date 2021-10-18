@@ -13,24 +13,35 @@
     "@types/react": "~16.9.56",
     "@types/react-dom": "~16.9.9",
     "@types/react-helmet": "~6.1.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "gatsby": "~2.25.4",
-    "gatsby-plugin-typescript": "~2.5.0",
     "gatsby-plugin-react-helmet": "~3.3.14",
     "gatsby-plugin-react-svg": "~3.0.0",
-    "typescript": "~4.0.5",
+    "gatsby-plugin-sass": "~2.4.2",
+    "gatsby-plugin-typescript": "~2.5.0",
+    "node-sass": "~4.14.1",
+    "normalize.css": "^8.0.1",
     "react": "~16.14.0",
     "react-bootstrap": "^2.0.0-rc.1",
     "react-bootstrap-table": "^4.3.1",
     "react-dom": "~16.14.0",
     "react-helmet": "~6.1.0",
-    "gatsby-plugin-sass": "~2.4.2",
-    "node-sass": "~4.14.1",
-    "webpack": "~4.44.2",
-    "normalize.css": "^8.0.1"
+    "typescript": "~4.0.5",
+    "uuid": "^8.3.2",
+    "webpack": "~4.44.2"
   },
   "devDependencies": {
+    "@types/jest": "~27.0.2",
     "jest": "~27.0.2",
-    "ts-jest": "~27.0.2",
-    "@types/jest": "~27.0.2"
+    "ts-jest": "~27.0.2"
+  },
+  "jest": {
+    "transform": {
+      "\\.tsx$": [
+        "ts-jest"
+      ]
+    }
   }
 }
