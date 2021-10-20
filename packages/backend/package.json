@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "cross-env-shell DEBUG=koa* nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.test.ts' --exec 'ts-node' src/server.ts",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "jest"
   },
   "dependencies": {
     "@koa/cors": "~3.1.0",
