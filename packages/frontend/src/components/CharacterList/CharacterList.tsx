@@ -86,8 +86,8 @@ export default class CharacterList extends Component<
 
   renderListLoading = (): ReactNode => {
     return (
-      <div className={styles.infoWrapper}>
-        <span className={styles.infoText}>Loading...</span>
+      <div className={styles.loadingWrapper}>
+        <div className={styles.loader}></div>
       </div>
     );
   };
