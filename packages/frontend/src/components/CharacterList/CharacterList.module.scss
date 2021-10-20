@@ -14,6 +14,10 @@
   }
 }
 
+.title {
+  margin-top: 5px;
+}
+
 .infoWrapper {
   margin: auto;
   max-width: 400px;
@@ -25,7 +29,7 @@
 
 .infoText {
   font-size: 1.5em;
-  height: 952px;
+  height: 850px;
   overflow: auto;
 }
 
@@ -77,5 +81,5 @@
 }
 
 .character {
-  text-color: beige;
+  color: beige;
 }

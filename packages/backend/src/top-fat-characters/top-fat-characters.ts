@@ -4,8 +4,8 @@ import axios from 'axios';
 export default async function topFatCharacters(ctx: Context): Promise<void> {
   const data: any[] = [];
   const href = 'https://swapi.dev/api/people';
-  let response = await axios.get(href);
 
+  let response = await axios.get(href);
   response.data.results.forEach((result: any) => {
     data.push(result);
   });

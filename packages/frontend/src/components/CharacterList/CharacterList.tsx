@@ -4,6 +4,7 @@ import Cancel from './undraw_cancel.svg';
 import styles from './CharacterList.module.scss';
 import Table from 'react-bootstrap/Table';
 import { v4 as uuidv4 } from 'uuid';
+import Filter from '../Filter/Filter';
 
 interface Character {
   id: string;
@@ -17,8 +18,9 @@ interface CharacterFull extends Character {
 
 interface CharacterListState {
   isLoading: boolean;
-  data?: Array<CharacterFull>;
+  data?: CharacterFull[];
   error?: { statusCode?: number; message: string };
+  filteredStarwarsData?: any;
 }
 
 export default class CharacterList extends Component<
@@ -27,42 +29,62 @@ export default class CharacterList extends Component<
 > {
   state: CharacterListState = {
     isLoading: true,
+    filteredStarwarsData: [],
+  };
+
+  filterStarwarsData = (data: any) => {
+    this.setState({ filteredStarwarsData: data });
   };
 
   public componentDidMount(): void {
-    fetch('http://localhost:3000/top-fat-characters').then(
-      async (data) => {
-        if (data.ok) {
-          this.setState({
-            isLoading: false,
-            data: await data.json(),
-          });
-        } else {
+    const starwarsData = JSON.parse(
+      localStorage.getItem('starwarsData') || '[]'
+    );
+    if (starwarsData.length > 0) {
+      this.setState({
+        isLoading: false,
+        data: starwarsData,
+      });
+    } else {
+      fetch('http://localhost:3000/top-fat-characters').then(
+        async (data) => {
+          if (data.ok) {
+            this.setState({
+              isLoading: false,
+              data: await data.json(),
+            });
+            localStorage.setItem('starwarsData', JSON.stringify(data));
+          } else {
+            this.setState({
+              isLoading: false,
+              error: {
+                message: await data.json(),
+                statusCode: data.status,
+              },
+            });
+          }
+        },
+        (error) => {
           this.setState({
             isLoading: false,
             error: {
-              message: await data.json(),
-              statusCode: data.status,
+              message: error.message,
             },
           });
         }
-      },
-      (error) => {
-        this.setState({
-          isLoading: false,
-          error: {
-            message: error.message,
-          },
-        });
-      }
-    );
+      );
+    }
   }
 
   public render(): ReactNode {
     return (
       <div className={styles.wrapper}>
         <div className={styles.titleWrapper}>
-          <span>Top fattest Star Wars characters</span>
+          <h4 className={styles.title}>Top fattest Star Wars characters</h4>
+          <Filter
+            starwarsData={this.state.data}
+            onFilterStarwarsData={this.filterStarwarsData}
+          />
         </div>
         <div>{this.renderList()}</div>
       </div>
@@ -137,10 +159,13 @@ export default class CharacterList extends Component<
 
   renderListData = (): ReactNode => {
     const { data } = this.state;
+    const filteredData = this.state.filteredStarwarsData;
     const characterList: Character[] = [];
 
-    if (data) {
-      data.forEach((person) => {
+    const activeData = filteredData.length > 0 ? filteredData : data;
+
+    if (activeData) {
+      activeData.forEach((person: any) => {
         let bmi = 0;
         if (person.mass !== 'unknown' && person.height !== 'unknown') {
           bmi =

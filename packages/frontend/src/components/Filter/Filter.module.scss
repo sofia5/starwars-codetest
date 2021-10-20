@@ -1,0 +1,36 @@
+.filterIconWrapper {
+  display: flex;
+  justify-content: right;
+}
+
+.filterIcon {
+  font-size: x-large;
+  margin-top: -34px;
+}
+
+.activeFilterIcon {
+  color: orange;
+}
+
+.filterButton {
+  border-radius: 8px;
+  background-color: beige;
+  color: #131313;
+  border: none;
+  padding: 2px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 1000;
+  margin-right: 10px;
+  margin-top: 2px;
+}
+
+.activeFilterButton {
+  background-color: orange;
+}
+
+.genderFilterTitle {
+  margin-top: 2rem;
+}
