@@ -62,7 +62,7 @@ export default class CharacterList extends Component<
     return (
       <div className={styles.wrapper}>
         <div className={styles.titleWrapper}>
-          <span>Top fattest characters Star Wars characters</span>
+          <span>Top fattest Star Wars characters</span>
         </div>
         <div>{this.renderList()}</div>
       </div>
