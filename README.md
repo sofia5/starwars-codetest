@@ -2,6 +2,15 @@
   <img alt="Star Wars" src="./star_wars.jpg" width="480">
 </p>
 
+# Comments about the code test
+
+- As the data is static (until a new movie is released), the data could be stored in a database and not fetched every time.
+- It would be good to enable caching
+- I decided to skip pagination as the number of results is limited (to me it's not necessary to show only 20 results at a time).
+- I choose to retrieve all the data at once to the frontend (as all of the data needed to be sorted by BMI).
+- I would have liked to test the frontend, but I got error msgs about unexpected tokens - I think it's not reading the tsx files correctly. In the backend I was able to fix it by transforming the jest to use ts-jest while handling ts files.
+- For the frontend I would have added sorting for each column and filtering (e.g. per movie, gender etc.) if I had more time.
+
 # Save The Galaxy
 
 Hello my fellow jedi warrior! ⚔ Master Yoda has assigned you with a mission that

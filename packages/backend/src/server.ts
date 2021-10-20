@@ -22,7 +22,10 @@ router.get('/top-fat-characters', topFatCharacters);
 app.use(router.routes()).use(router.allowedMethods());
 app.use(logger());
 
-const server = app.listen(config.port, () => {
-  console.log(`The server is running at port ${config.port}`);
-});
-export default server;
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(config.port, () =>
+    console.log(`Listening on port ${config.port}`)
+  );
+}
+
+export = app;
