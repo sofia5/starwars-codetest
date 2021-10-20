@@ -2,11 +2,7 @@
   "componentChunkName": "component---cache-dev-404-page-js",
   "path": "/dev-404-page/",
   "result": {
-    "data": {
-      "allSitePage": {
-        "nodes": [{ "path": "/404/" }, { "path": "/" }, { "path": "/404.html" }]
-      }
-    },
+    "data": { "allSitePage": { "nodes": [{ "path": "/" }] } },
     "pageContext": {}
   },
   "staticQueryHashes": []

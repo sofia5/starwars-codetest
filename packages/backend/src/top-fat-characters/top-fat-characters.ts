@@ -6,14 +6,14 @@ export default async function topFatCharacters(ctx: Context): Promise<void> {
   const href = 'https://swapi.dev/api/people';
   let response = await axios.get(href);
 
-  response.data.results.forEach((result: object) => {
+  response.data.results.forEach((result: any) => {
     data.push(result);
   });
 
   while (response.data['next'] !== null) {
     response = await axios.get(response.data['next']);
     if (response.status === 200) {
-      response.data.results.forEach((result: object) => {
+      response.data.results.forEach((result: any) => {
         data.push(result);
       });
     } else {
