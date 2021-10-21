@@ -93,7 +93,7 @@ export default class Filter extends Component<FilterProps> {
                 ? styles.activeFilterIcon + ' ' + styles.filterIcon
                 : undefined + ' ' + styles.filterIcon
             }
-            onClick={() => this.toggleActiveIcon()}
+            onClick={(): void => this.toggleActiveIcon()}
             icon={faFilter}
           />
         </div>
@@ -106,7 +106,7 @@ export default class Filter extends Component<FilterProps> {
                   ? styles.activeFilterButton + ' ' + styles.filterButton
                   : undefined + ' ' + styles.filterButton
               }
-              onClick={() => this.toggleActiveGenderButton('male')}
+              onClick={(): void => this.toggleActiveGenderButton('male')}
             >
               Male
             </button>
@@ -116,7 +116,7 @@ export default class Filter extends Component<FilterProps> {
                   ? styles.activeFilterButton + ' ' + styles.filterButton
                   : undefined + ' ' + styles.filterButton
               }
-              onClick={() => this.toggleActiveGenderButton('female')}
+              onClick={(): void => this.toggleActiveGenderButton('female')}
             >
               Female
             </button>

@@ -32,7 +32,7 @@ export default class CharacterList extends Component<
     filteredStarwarsData: [],
   };
 
-  filterStarwarsData = (data: any) => {
+  filterStarwarsData = (data: any): void => {
     this.setState({ filteredStarwarsData: data });
   };
 
